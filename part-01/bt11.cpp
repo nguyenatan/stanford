@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip> // std::setprecision()
+#include <iomanip> // std::setfill(), std::setw()
 
 using namespace std;
 
