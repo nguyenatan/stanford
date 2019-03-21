@@ -8,31 +8,17 @@ int main()
     cout << "Nhap 3 so nguyen: ";
     cin >> a >> b >> c;
 
-    int max = 0, min = 0;
+    int max = a, min = a;
 
-    if (a >= b && a >= c) {
-        max = a;
-        if (b > c)
-            min = c;
-        else
-            min = b;
-    }
-
-    if (b >= a && b >= c) {
+    if (max < b)
         max = b;
-        if (a > c)
-            min = c;
-        else
-            min = a;
-    }
-
-    if (c >= a && c >= b) {
+    if (max < c)
         max = c;
-        if (a > b)
-            min = b;
-        else
-            min = a;
-    }
+    
+    if (min > b)
+        min = b;
+    if (min > c)
+        min = c;
 
     cout << "Max = " << max << endl;
     cout << "Min = " << min << endl;
