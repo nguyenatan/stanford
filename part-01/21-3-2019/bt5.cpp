@@ -8,9 +8,9 @@ int main()
     cin >> d;
 
     if (d > 0)
-        cout << hex << "Hex: " << d << "\n";
+        cout << hex << uppercase << "Hex: " << d << "\n";
     else
-        cout << oct << "Oct: " << d << "\n";
+        cout << oct << "Oct: " << -d << "\n";
 
     return 0;
 }
