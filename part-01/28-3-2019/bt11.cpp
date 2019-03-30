@@ -55,7 +55,7 @@ int main()
         else if (isTamGiacCan(a, b, c))
             cout << "3 canh vua nhap tao thanh tam giac can\n";
         else
-            cout << "3 canh vua nhap tao thanh tam giac thuong \n";
+            cout << "3 canh vua nhap tao thanh tam giac thuong\n";
         
         S = tinhSTamGiac(a, b, c);
         cout << "Dien tich = " << S << "\n";
