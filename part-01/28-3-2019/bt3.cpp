@@ -11,7 +11,7 @@ int main()
     cout << "Giai thua: ";
 
     for (int i = 1; i <= n; ++i) {
-        cout << i << ((i < n && n != 1) ? " * " : " = ");
+        cout << i << (i < n ? " * " : " = ");
         factorial *= i;
     }
 
