@@ -7,7 +7,7 @@ int main()
     int n;
     cout << "Nhap n: "; cin >> n;
 
-    while (n <= -10 || n >= 10) {
+    while (n / 10) {
         cout << "Nhap n: ";
         cin >> n;
     }
