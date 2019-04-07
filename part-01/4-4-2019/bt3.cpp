@@ -6,7 +6,8 @@ int main()
 {
     int n;
     int max = 0, min = 2147483647;
-    double sum = 0, count = 0;
+    double sum = 0;
+    int count = 0;
 
     do {
         cout << "Nhap so nguyen duong (0 - exit): ";
