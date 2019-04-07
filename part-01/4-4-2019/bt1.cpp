@@ -11,16 +11,15 @@ unsigned factorial(unsigned n)
 int main()
 {
     int x, n;
-    cout << "Nhap x: "; cin >> x;
+    cout << "Nhap x, n: ";
+    cin >> x >> n;
 
     double sum = 1;
 
-    for (int i = 1; i <= x; ++i)
+    for (int i = 1; i <= n; ++i)
         sum += pow(x, i) / factorial(i);
 
     cout << "Tong = " << sum << "\n";
-
-    cout << "Nhap n: "; cin >> n;
 
     sum = 0;
 
