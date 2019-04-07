@@ -38,8 +38,7 @@ int main()
     if (month == 1) {
         thangTruoc = 12;
         thangSau = 2;
-    }
-    else if (month == 12) {
+    } else if (month == 12) {
         thangTruoc = 11;
         thangSau = 1;
     } else {
