@@ -21,7 +21,7 @@ int main()
     cout << "Uoc chung cua " << a << " va " << b << " la:";
 
     for (int i = 1; i <= ucln; ++i)
-        if (!(a % i) && !(b % i))
+        if (!(ucln % i))
             cout << ' ' << i;
 
     cout << "\n";
