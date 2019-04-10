@@ -10,21 +10,21 @@ int main()
 
     cout << "1.\n\n";
 
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; ++i) {
         string a(i, '*');
         cout << a << "\n";
     }
 
     cout << "\n2.\n\n";
 
-    for (int i = n; i >= 1; i--) {
+    for (int i = n; i >= 1; --i) {
         string a(i, '*');
         cout << a << "\n";
     }
 
     cout << "\n3.\n\n";
 
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; ++i) {
         string s(n - i, ' ');
         string a(i, '*');
         cout << s << a << "\n";
@@ -32,7 +32,7 @@ int main()
 
     cout << "\n4.\n\n";
 
-    for (int i = n; i >= 1; i--) {
+    for (int i = n; i >= 1; --i) {
         string s(n - i, ' ');
         string a(i, '*');
         cout << s << a << "\n";
@@ -40,7 +40,7 @@ int main()
 
     cout << "\n5.\n\n";
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
         string s(n - i - 1, ' ');
         string a(2 * i + 1, '*');
         cout << s << a << "\n";
@@ -48,7 +48,7 @@ int main()
 
     cout << "\n6.\n\n";
 
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; i >= 0; --i) {
         string s(n - i - 1, ' ');
         string a(2 * i + 1, '*');
         cout << s << a << "\n";
