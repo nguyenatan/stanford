@@ -28,5 +28,13 @@ int main()
 		cout << s << a << "\n";
 	}
 	
+	cout << "\n4.\n\n";
+	
+	for (int i = 5; i >= 1; --i) {
+		string s(5-i, ' ');
+		string a(i, '*');
+		cout << s << a << "\n";
+	}
+	
 	return 0;
 }
