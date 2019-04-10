@@ -4,7 +4,7 @@ using namespace std;
 
 int gcd(int a, int b)
 {
-    return !b ? a : gcd(b, a % b);
+    return !b ? a : gcd(b, a%b);
 }
 
 int main()
@@ -20,7 +20,7 @@ int main()
     
     cout << "Uoc chung cua " << a << " va " << b << " la:";
 
-    for (int i = 1; i <= ucln; i++)
+    for (int i = 1; i <= ucln; ++i)
         if (!(ucln % i))
             cout << ' ' << i;
 
