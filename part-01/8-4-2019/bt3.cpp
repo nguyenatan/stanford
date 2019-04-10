@@ -5,7 +5,7 @@ using namespace std;
 // Ham tim UCLN.
 int gcd(int a, int b)
 {
-    return !b ? a : gcd(b, a%b);
+    return !b ? a : gcd(b, a % b);
 }
 
 // Ham tim BCNN.
