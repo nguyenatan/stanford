@@ -28,6 +28,5 @@ int main()
 		cout << s << a << "\n";
 	}
 	
-	
 	return 0;
 }
