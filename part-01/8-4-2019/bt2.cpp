@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int n;
+    unsigned long long n;
 
     do {
         cout << "Nhap so nguyen duong: ";
@@ -12,10 +12,10 @@ int main()
     } while (n <= 0);
 
     bool odd = true, even = true;
-    int num = n;
+    unsigned long long num = n;
 
     while (n) {
-        int i = n % 10;
+        unsigned long long i = n % 10;
 
         if (!(i % 2))
             odd = false;
