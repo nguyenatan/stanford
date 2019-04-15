@@ -47,7 +47,7 @@ bool isTangDan(int n)
 
 		n /= 10;
 
-		if(rem <= n % 10)
+		if (rem <= n % 10)
 			return false;
 	}
 
@@ -62,13 +62,13 @@ int main()
 		cin >> n;
 	} while (n <= 0);
 
-	if(allOdd(n))
+	if (allOdd(n))
 		cout << n << " co toan chu so le\n";
-	if(allEven(n))
+	if (allEven(n))
 		cout << n << " co toan chu so chan\n";
-	if(isDoiXung(n))
+	if (isDoiXung(n))
 		cout << n << " la so doi xung\n";
-	if(isTangDan(n))
+	if (isTangDan(n))
 		cout << n << " tang dan ->\n";
 
 	return 0;
