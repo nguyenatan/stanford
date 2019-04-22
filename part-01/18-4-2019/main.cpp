@@ -55,8 +55,7 @@ int main()
     output(arr, size);
 
     int index = 0;
-    cout << "   Xoa phan tu tai vi tri: ";
-    cin >> index;
+    cout << "   Xoa phan tu tai vi tri: "; cin >> index;
 
     deleteAtX(arr, size, index);
     output(arr, size);
