@@ -206,10 +206,10 @@ void countIntegerType(int *arr, int size, int& countNeg, int& countPos, int& cou
     countNeg = 0, countPos = 0, countZero = 0;
     
     for (int i = 0; i < size; ++i) {
-		if (arr[i] < 0) ++countNeg;
-		else if (arr[i] > 0) ++countPos;
-		else ++countZero;
-	}
+	    if (arr[i] < 0) ++countNeg;
+	    else if (arr[i] > 0) ++countPos;
+	    else ++countZero;
+    }
 }
 
 // 12. Dem va tinh tong cac so chinh phuong.
@@ -224,11 +224,11 @@ void countSumPerSqr(int *arr, int size, int& count, int& sum)
     count = 0, sum = 0;
     
     for (int i = 0; i < size; ++i) {
-		if (isPerfectSquare(arr[i])) {
-			++count;
-			sum += arr[i];
-		}
-	}
+	    if (isPerfectSquare(arr[i])) {
+		    ++count;
+		    sum += arr[i];
+	    }
+    }
 }
 
 // 13. Sap xep
@@ -251,9 +251,9 @@ void ascending(int *arr, int size)
 void descending(int *arr, int size)
 {
 	for (int i = 0; i < size-1; ++i)
-        for (int j = i+1; j < size; ++j)
-            if (arr[i] < arr[j])
-                swap(arr[i], arr[j]);
+		for (int j = i+1; j < size; ++j)
+			if (arr[i] < arr[j])
+				swap(arr[i], arr[j]);
 }
 
 #endif
