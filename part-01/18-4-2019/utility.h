@@ -204,8 +204,8 @@ void insertAtX(int *arr, int& size, int value, int index)
 void countIntegerType(int *arr, int size, int& countNeg, int& countPos, int& countZero)
 {
     countNeg = 0, countPos = 0, countZero = 0;
-
-	for (int i = 0; i < size; ++i) {
+    
+    for (int i = 0; i < size; ++i) {
 		if (arr[i] < 0) ++countNeg;
 		else if (arr[i] > 0) ++countPos;
 		else ++countZero;
@@ -222,8 +222,8 @@ bool isPerfectSquare(int value)
 void countSumPerSqr(int *arr, int size, int& count, int& sum)
 {
     count = 0, sum = 0;
-
-	for (int i = 0; i < size; ++i) {
+    
+    for (int i = 0; i < size; ++i) {
 		if (isPerfectSquare(arr[i])) {
 			++count;
 			sum += arr[i];
