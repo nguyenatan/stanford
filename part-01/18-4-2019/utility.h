@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <cmath>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -145,7 +147,8 @@ void maxMinNegInteger(int *arr, int size, int& maxNeg, int& minNeg)
     }
 }
 
-// 9. Xoa phan tu
+// 9. Xoa phan tu.
+// Xoa dau.
 void deleteHead(int *arr, int& size)
 {
     --size;
@@ -153,16 +156,95 @@ void deleteHead(int *arr, int& size)
         arr[i] = arr[i+1];
 }
 
+// Xoa cuoi.
 void deleteTail(int *arr, int& size)
 {
     --size;
 }
 
+// Xoa tai X index.
 void deleteAtX(int *arr, int& size, int index)
 {
+	if (index == size - 1) {
+		--size;
+		return;
+	}
+	
     --size;
     for (int i = index; i < size; ++i)
         arr[i] = arr[i+1];
+}
+
+// 10. Chen phan tu.
+// Chen dau.
+void insertHead(int *arr, int& size, int value)
+{
+	++size;
+	for (int i = size-1; i > 0; --i)
+		arr[i] = arr[i-1];
+	arr[0] = value;
+}
+
+// Chen cuoi.
+void insertTail(int *arr, int& size, int value)
+{
+	++size;
+	arr[size-1] = value;
+}
+
+// Chen tai X index.
+void insertAtX(int *arr, int& size, int value, int index)
+{
+	++size;
+	for (int i = size-1; i > index; --i)
+		arr[i] = arr[i-1];
+	arr[index] = value;
+}
+
+// 11. Dem so am, so duong, so 0
+void countIntegerType(int *arr, int size, int& countNeg, int& countPos, int& countZero)
+{
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] < 0) ++countNeg;
+		else if (arr[i] > 0) ++countPos;
+		else ++countZero;
+	}
+}
+
+// 12. Dem va tinh tong cac so chinh phuong.
+// Ham kiem tra so chinh phuong.
+bool isPerfectSquare(int value)
+{
+	return (int)sqrt(value) == sqrt(value);
+}
+
+void countSumPerSqr(int *arr, int size, int& count, int& sum)
+{
+	for (int i = 0; i < size; ++i) {
+		if (isPerfectSquare(arr[i])) {
+			++count;
+			sum += arr[i];
+		}
+	}
+}
+
+// 13. Sap xep
+bool greater(int a, int b) { return a > b; }
+
+bool less(int a, int b) { return a < b; }
+
+// Tang dan.
+void ascending(int *arr, int size)
+{
+	vector<int> v(arr, arr+size);
+	sort(v.begin(), v.begin()+size, greater);
+}
+
+// Giam dan.
+void descending(int *arr, int size)
+{
+	vector<int> v(arr, arr+size);
+	sort(v.begin(), v.begin()+size, less);
 }
 
 #endif
