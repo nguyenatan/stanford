@@ -165,7 +165,7 @@ void deleteTail(int *arr, int& size)
 // Xoa tai X index.
 void deleteAtX(int *arr, int& size, int index)
 {
-	if (index == size - 1) {
+    if (index == size - 1) {
 		--size;
 		return;
 	}
