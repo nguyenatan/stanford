@@ -1,5 +1,5 @@
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef _UTILITY_H
+#define _UTILITY_H 1
 
 #include <iostream>
 #include <cmath>
