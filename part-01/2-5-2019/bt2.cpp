@@ -11,7 +11,7 @@ void showBits(int value)
 	
 	while (value) {
 		
-		if (!(value % 2))
+		if (!(value & 1))
 			s.insert(s.begin(), '0');
 		else
 			s.insert(s.begin(), '1');
