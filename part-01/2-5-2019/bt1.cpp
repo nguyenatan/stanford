@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cctype> // isdigit
 #include <cstdlib> // atoi
+#include <cstdio> // gets
 
 using namespace std;
 
