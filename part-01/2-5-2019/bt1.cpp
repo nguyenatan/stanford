@@ -28,10 +28,10 @@ int main()
 		int i = atoi(s); // Chuyen tu chuoi thanh so nguyen.
 		
 		if(sizeof(i) == 4)
-			cout << i << " la dinh dang so nguyen\n";
+			cout << i << " la dinh dang so nguyen.\n";
 		
 	} else
-		cout << s << " khong phai la dinh dang so nguyen\n";
+		cout << s << " khong phai la dinh dang so nguyen.\n";
 	
 	return 0;
 }
