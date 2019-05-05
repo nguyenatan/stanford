@@ -90,7 +90,7 @@ jump:
     
     // 4. Tim so nguyen xuat hien nhieu nhat trong ma tran.
     int size = row * col;
-	int *p = new int[size];
+    int *p = new int[size];
 	
 	// Chuyen ma tran 2d array thanh 1d array.
 	for (int i = 0; i < row; ++i)
