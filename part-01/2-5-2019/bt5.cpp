@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm> // sort
+#include <map>
 
 using namespace std;
 
@@ -89,18 +89,24 @@ jump:
         cout << "3. Khong co so hoan thien trong ma tran.\n";
     
     // 4. Tim so nguyen xuat hien nhieu nhat trong ma tran.
-    int size = row * col;
-    int *p = new int[size];
-	
-	// Chuyen ma tran 2d array thanh 1d array.
-	for (int i = 0; i < row; ++i)
-		for (int j = 0; j < col; ++j)
-			p[i*col+j] = arr[i][j];
-		
-	for (int i = 0; i < size; ++i)
-		cout << p[i] << (i != size - 1 ? ' ' : '\n');
-		
-	sort(p, p + size);
+    map<int, int> hash;
+
+    for (int i = 0; i < row; ++i)
+        for (int j = 0; j < col; ++j)
+            hash[arr[i][j]]++;
+
+    int maxCount = 0, mostFrequent = 0;
+
+    for (map<int, int>::iterator it = hash.begin(); it != hash.end(); ++it)
+        if (maxCount < it->second) {
+            maxCount = it->second;
+            mostFrequent = it->first;
+        }
+        
+    cout << "4. So nguyen xuat hien nhieu nhat = " << mostFrequent << "\n";
+
+    // 5. Liet ke cac dong chua gia tri nho nhat.
+    
     
     return 0;
 }
