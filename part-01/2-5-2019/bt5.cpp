@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm> // sort
 
 using namespace std;
 
@@ -88,7 +89,18 @@ jump:
         cout << "3. Khong co so hoan thien trong ma tran.\n";
     
     // 4. Tim so nguyen xuat hien nhieu nhat trong ma tran.
-    
+    int size = row * col;
+	int *p = new int[size];
+	
+	// Chuyen ma tran 2d array thanh 1d array.
+	for (int i = 0; i < row; ++i)
+		for (int j = 0; j < col; ++j)
+			p[i*col+j] = arr[i][j];
+		
+	for (int i = 0; i < size; ++i)
+		cout << p[i] << (i != size - 1 ? ' ' : '\n');
+		
+	sort(p, p + size);
     
     return 0;
 }
