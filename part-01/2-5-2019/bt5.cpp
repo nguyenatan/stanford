@@ -110,15 +110,18 @@ jump:
         for (int j = 0; j < col; ++j)
             hash[arr[i][j]]++;
 
-    int maxCount = 0, mostFrequent = 0;
+    int maxCount = 0;
 
     for (map<int, int>::iterator it = hash.begin(); it != hash.end(); ++it)
-        if (maxCount < it->second) {
+        if (maxCount < it->second)
             maxCount = it->second;
-            mostFrequent = it->first;
-        }
         
-    cout << "4. So nguyen xuat hien nhieu nhat = " << mostFrequent << "\n";
+    cout << "4. So nguyen xuat hien nhieu nhat:";
+    for (map<int, int>::iterator it = hash.begin(); it != hash.end(); ++it)
+        if (maxCount == it->second)
+            cout << ' ' << it->first;
+    
+    cout << "\n";
 
     // 5. Liet ke cac dong chua gia tri nho nhat.
     cout << "5. Cac dong chua gia tri nho nhat:\n";
