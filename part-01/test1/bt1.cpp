@@ -25,7 +25,7 @@ int main()
 	
 	int *arr = new int[size];
 	
-	// 1. Nhap N so nguyen..
+	// 1. Nhap N so nguyen.
 	for (int i = 0; i < size; ++i)
 		cin >> arr[i];
 	
