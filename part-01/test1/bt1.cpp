@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#include <vector>
+#include <map>
 
 using namespace std;
 
@@ -73,14 +75,21 @@ int main()
 	cout << "   TBC cac so chan = " << sumEven / countEven << '\n';
 	
 	// 4. Hien thi day tang dan.
-	sort(arr, arr + size);
+	vector<int> sorted(arr, arr + size);
 	
-	cout << "4. Day tang dan: ";
-	for (int i = 0; i < size; ++i)
-		cout << arr[i] << (i != size - 1 ? ' ' : '\n');
+	sort(sorted.begin(), sorted.end());
+	
+	cout << "4. Day tang dan:";
+	for (vector<int>::iterator it = sorted.begin(); it != sorted.end(); ++it)
+		cout << ' ' << *it;
 		
-	// 5. Hien thi 3 so nho nhat cua day.
+	cout << '\n';
 	
+	// 5. Hien thi 3 so nho nhat cua day.
+	cout << "5. 3 so nho nhat: ";
+	
+	for (int i = 0; i < 3; ++i)
+		cout << sorted[i] << (i != 2 ? ' ' : '\n');
 	
 	// 6. Tinh tong cac so nguyen to.
 	int sumPrime = 0;
@@ -92,19 +101,20 @@ int main()
 	cout << "6. Tong cac so nguyen to = " << sumPrime << '\n';
 	
 	// 7. Xoa cac phan tu giong nhau trong mang.
-	int *temp = arr;
-	int length = 0;
+	map<int, bool> removed;
 	
-	for (int i = 0; i < size - 1; ++i)
-		if (arr[i] != arr[i+1])
-			temp[j++] = arr[i];
-	
-	temp[j++] = arr[size-1];
+	for (int i = 0; i < size; ++i)
+		removed[arr[i]] = 1;
+		
+	cout << "7. Xoa cac phan tu giong nhau:";
+		
+	for (map<int, bool>::iterator it = removed.begin(); it != removed.end(); ++it)
+		if (it->second == 1)
+			cout << ' ' << it->first;
 			
-	cout << "7. Xoa cac phan tu giong nhau: ";
+	cout << '\n';
 	
-	for (int i = 0; i < j; ++i)
-		cout << temp[i] << (i != j - 1 ? ' ' : '\n');
+	delete[] arr;
 	
 	return 0;
 }
