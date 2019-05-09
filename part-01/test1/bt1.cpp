@@ -1,6 +1,20 @@
 #include <iostream>
+#include <algorithm>
+#include <cmath>
 
 using namespace std;
+
+// Ham kiem tra so nguyen to.
+bool isPrime(int value)
+{
+	if (value < 2) return 0;
+	
+	for (int i = 2; i <= sqrt(value); ++i)
+		if (!(value % i))
+			return 0;
+			
+	return 1;
+}
 
 int main()
 {
@@ -58,6 +72,39 @@ int main()
 	cout << "   Tong cac so am = " << sumNeg << '\n';
 	cout << "   TBC cac so chan = " << sumEven / countEven << '\n';
 	
+	// 4. Hien thi day tang dan.
+	sort(arr, arr + size);
+	
+	cout << "4. Day tang dan: ";
+	for (int i = 0; i < size; ++i)
+		cout << arr[i] << (i != size - 1 ? ' ' : '\n');
+		
+	// 5. Hien thi 3 so nho nhat cua day.
+	
+	
+	// 6. Tinh tong cac so nguyen to.
+	int sumPrime = 0;
+	
+	for (int i = 0; i < size; ++i)
+		if (isPrime(arr[i]))
+			sumPrime += arr[i];
+			
+	cout << "6. Tong cac so nguyen to = " << sumPrime << '\n';
+	
+	// 7. Xoa cac phan tu giong nhau trong mang.
+	int *temp = arr;
+	int length = 0;
+	
+	for (int i = 0; i < size - 1; ++i)
+		if (arr[i] != arr[i+1])
+			temp[j++] = arr[i];
+	
+	temp[j++] = arr[size-1];
+			
+	cout << "7. Xoa cac phan tu giong nhau: ";
+	
+	for (int i = 0; i < j; ++i)
+		cout << temp[i] << (i != j - 1 ? ' ' : '\n');
 	
 	return 0;
 }
