@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm> // sort
+#include <algorithm> // sort, remove
 #include <cmath> // sqrt
 #include <vector>
 #include <map>
@@ -29,7 +29,7 @@ int main()
 	for (int i = 0; i < size; ++i)
 		cin >> arr[i];
 	
-	cout << '\n';
+	cout << "\n1. ";
 	for (int i = 0; i < size; ++i)
 		cout << arr[i] << (i != size - 1 ? ' ' : '\n');
 		
@@ -101,16 +101,18 @@ int main()
 	cout << "6. Tong cac so nguyen to = " << sumPrime << '\n';
 	
 	// 7. Xoa cac phan tu giong nhau trong mang.
-	map<int, bool> removed;
-	
-	for (int i = 0; i < size; ++i)
-		removed[arr[i]] = 1;
-		
+	vector<int> removed(arr, arr + size);
+
+	vector<int>::iterator end = removed.end();
+
+	for (vector<int>::iterator it = removed.begin(); it != end; ++it)
+		end = remove(it + 1, end, *it);
+
+	removed.erase(end, removed.end());
+
 	cout << "7. Xoa cac phan tu giong nhau:";
-		
-	for (map<int, bool>::iterator it = removed.begin(); it != removed.end(); ++it)
-		if (it->second == 1)
-			cout << ' ' << it->first;
+	for (vector<int>::iterator it = removed.begin(); it != end; ++it)
+		cout << ' ' << *it;
 			
 	cout << '\n';
 	
