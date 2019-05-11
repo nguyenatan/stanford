@@ -7,18 +7,18 @@ using namespace std;
 
 int main()
 {
-    char s[100];
-    gets(s);
+        char s[100];
+        gets(s);
 
-    char *token = strtok(s, "/");
-    int sum = 0;
+        char *token = strtok(s, "/");
+        int sum = 0;
 
-    while (token) {
-        sum += atoi(token);
-        token = strtok(NULL, "/");
-    }
+        while (token) {
+                sum += atoi(token);
+                token = strtok(NULL, "/");
+        }
     
-    cout << "Tong = " << sum << '\n';
+        cout << "Tong = " << sum << '\n';
 
-    return 0;
+        return 0;
 }
