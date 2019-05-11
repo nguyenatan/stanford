@@ -4,26 +4,30 @@
 
 using namespace std;
 
-template<typename T>
-string dec_to_bin(T value)
-{
-	string binary = "";
+#define CHAR_BIT 8
 
-    while (value) {
-        binary = (!(value & 1) ? '0' : '1') + binary;
-        value /= 2;
+string dec_to_bin(int value)
+{
+	stringstream ss;
+    int i = sizeof(int) * CHAR_BIT - 1;
+
+    for (; i >= 0; --i) {
+
+        if ( i != 31 && !((i + 1) & 3) )
+            ss << " ";
+        
+        ss << (value & (1u << i) ? "1" : "0");
     }
 
-    return binary;
+    return ss.str();
 }
 
-template<typename T>
-string dec_to_hex(T value)
+string dec_to_hex(int value)
 {
 	stringstream ss;
 
 	ss << "0x"
-	   << setfill('0') << setw(sizeof(T) * 2)
+	   << setfill('0') << setw(sizeof(int) * 2)
 	   << hex << value;
 	   
 	return ss.str();
